@@ -1,0 +1,45 @@
+<%- include('./partials/head.ejs') -%> 
+
+<section class="vraagaanbod"> 
+    <!-- Doe dit meerdere keren.. -->
+    <% vraagaanbod.forEach(function(initatief) {%>
+        <article>
+        <!-- Titel van het vraagaanbod -->
+        <h2> <%= initatief.title %></h2>
+            
+        <!-- Startdatum van het vraagaanbod -->
+        <p>Startdatum: <%= initatief.start_date %></p>
+            
+        <!-- Einddatum van het vraagaanbod -->
+        <p>Einddatum: <%= initatief.end_date %></p>
+            
+        <!-- Buurt waar het vraagaanbod plaatsvindt -->
+        <p>Buurt: <%= initatief.neighbourhood %></p>
+            
+        <!-- Optioneel: tijd van het vraagaanbod -->
+        <% if (initatief.time) { %>
+        <p>Tijd: <%= initatief.time %></p>
+        <% } %>
+
+        <p class="over-vraagaanbod-tekst"> <%= initatief.long_description %> </p>
+        <!-- Afbeelding van het vraagaanbod -->
+        <% if (initatief.image) { %>
+        <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>"            
+        alt="<%- initatief.short_description %>">
+        <% } %>
+        </article>
+        <%});%>
+</section>
+
+<section class="contact"> <!-- Gedeelte voor contactgegevens -->
+    <img src="images/profilepicture.webp" alt="profielfoto">
+    <article>
+        <!-- Naam van de contactpersoon -->
+        <p>Naam: <span> kiwitaart </span></p>
+        
+        <!-- E-mailadres van de contactpersoon -->
+        <p>E-mail: <span> kiwitaart@gmail.com </span></p>
+    </article>
+</section>
+
+<%- include('./partials/foot.ejs') -%>

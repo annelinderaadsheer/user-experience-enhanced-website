@@ -1,0 +1,408 @@
+/* Variabelen voor kleuren en schaduw */
+:root {
+  --primary: rgb(167, 208, 183);
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* Stijlen voor de header */
+/* div.header {
+  background-color: var(--primary);
+} */
+
+/* Stijlen voor de menubalk */
+.menubar {
+  position: relative;
+  display: block;
+  margin: 0 auto 50px auto;
+  padding: 12px 10px 0px 10px;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif, Georgia;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  height: 25px;
+  width: 70%;
+  background: var(--primary);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Stijlen voor de ul binnen de menubalk */
+.menubar ul {
+  height: 0;
+  display: inline-block;
+  opacity: 0;
+  margin: 0;
+  padding: 10px 0px 0px 0px;
+  width: 90%;
+}
+
+/* Stijlen voor links binnen de menubalk */
+.menubar a {
+  color: #6d6d6d;
+  display: block;
+  padding: 5px 10px;
+}
+
+/* Stijlen voor links binnen de menubalk bij hover */
+.menubar li:hover a {
+  color: #ecf0f1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Stijlen voor de actieve link binnen de menubalk */
+.menubar .active {
+  color: #ecf0f1;
+}
+
+/* Stijlen voor de footer */
+.footer {
+  background: var(--light);
+  height: 100%;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Media query voor schermen groter dan 768px */
+@media screen and (min-width: 768px) {
+  /* Stijlen voor de header bij schermen groter dan 768px */
+  .header {
+    /* border-bottom: 15px solid, var(--primary); */
+    position: relative;
+    height: 100%;
+    text-align: left;
+    padding: 50px 0 20px 0;
+    background: var(--light);
+  }
+
+  /* Stijlen voor het logo binnen de header */
+  .logo {
+    left: 0;
+    display: inline-block;
+    line-height: 16px;
+    font-size: 21px;
+    padding-left: 20px;
+  }
+
+  /* Stijlen voor links binnen de menubalk */
+  .logo a {
+    display: inline-block;
+  }
+
+  /* Stijlen voor de menubalk */
+  .menubar {
+    cursor: default;
+    position: absolute;
+    top: 35%;
+    right: 0;
+    display: inline-block;
+    padding: 0px 10px;
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+  }
+
+  /* Stijlen voor de ul binnen de menubalk */
+  .menubar ul {
+    height: auto;
+    max-height: 50px;
+    width: auto;
+    display: block;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  /* Stijlen voor links binnen de menubalk */
+  .menubar a {
+    padding: 5px 0;
+    display: inline-block;
+    color: var(--dark);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif, Georgia;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* Stijlen voor li binnen de menubalk */
+  .menubar li {
+    display: inline-block;
+    list-style-type: none;
+    color: #6d6d6d;
+    padding: 0 8px;
+  }
+}
+
+/* Stijlen voor de body */
+body {
+  font-family: 'Noto Sans', sans-serif, Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Tekststijlen voor paragrafen */
+p {
+  line-height: 25px;
+  font-weight: 400;
+}
+
+/* Stijlen voor h1 */
+h1 {
+  color: var(--light);
+}
+
+/* Stijlen voor h2, h3, h4, h5, h6 */
+h2, h3, h4, h5, h6 {
+  letter-spacing: 0.8px;
+  font-family: 'PT Sans', sans-serif, Helvetica;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+/* Stijlen voor links */
+a {
+  text-decoration: none;
+}
+
+/* Stijlen voor de wrapper */
+.wrapper {
+  margin: 0 auto;
+}
+
+/* Stijlen voor het logo */
+.logo {
+  line-height: 16px;
+  font-size: 1.2em;
+  padding-bottom: 30px;
+}
+
+/* Stijlen voor h1 binnen het logo */
+.logo h1 {
+  font-weight: 700;
+  text-shadow: 3px 3px 20px #000;
+  color: var(--dark);
+}
+
+/* Stijlen voor tweede h1 binnen het logo */
+.logo h1:nth-child(2) {
+  color: var(--primary);
+}
+
+/* Stijlen voor afbeeldingen binnen de banner */
+.banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* Stijlen voor de sectie over Wat doen wij? */
+.about-info {
+  width: 85%;
+  position: relative;
+  background: var(--light);
+  margin: auto;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  padding: 10px 10px 10px 0;
+  vertical-align: top;
+  text-align: center;
+  color: #6d6d6d;
+}
+
+/* Stijlen voor paragrafen binnen de about-info sectie */
+.about-info p {
+  font-size: 1em;
+}
+
+/* Stijlen voor de informatie binnen de about-info sectie */
+/* .info {
+  box-sizing: border-box;
+  position: relative;
+  padding: 60px 20px 0px 0;
+  vertical-align: top;
+  text-align: center;
+  color: #6d6d6d;
+} */
+
+/* Stijlen voor het laatste div-element binnen de about-info sectie */
+.about-info div:last-child {
+  padding: 60px 20px 30px 0;
+}
+
+/* Stijlen voor h1 binnen de informatie sectie */
+.info h1 {
+  padding-bottom: 30px;
+}
+
+/* Stijlen voor afbeeldingen binnen de about-info sectie */
+.about-info img {
+  position: relative;
+  height: 67px;
+  width: 57px;
+  margin: 0px 0 0 -15px;
+}
+
+/* Call to Action / ZELF INITIATIEF AANMELDEN */
+.cta {
+  margin-top: -20px;
+  width: 100%;
+  background-color: var(--primary);
+  text-align: center;
+}
+
+/* Stijlen voor h2 binnen de call-to-action sectie */
+.cta h2 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #2e2e2e;
+}
+
+/* Stijlen voor de knop */
+.btn {
+  text-transform: uppercase;
+  background: rgba(236, 240, 241, 0.6);
+  border: 2px #2e2e2e solid;
+  border-radius: 2px;
+  padding: 15px;
+  font-family: 'Noto Sans', sans-serif, Georgia;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+
+/* Stijlen voor de knop bij hover */
+.btn:hover {
+  background: rgba(236, 240, 241, 0.8);
+}
+
+/* Form */
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+  width: calc(100% - 10px);
+  padding: 5px;
+  font-size: 1em;
+}
+
+.input-group input[type="file"] {
+  width: auto;
+}
+
+.radio-buttons {
+  margin-bottom: 15px;
+}
+
+.radio-buttons label {
+  margin-right: 15px;
+}
+
+.radio-buttons input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  cursor: pointer;
+  text-transform: uppercase;
+  background: rgba(236, 240, 241, 0.6);
+  border: 2px #2e2e2e solid;
+  border-radius: 2px;
+  padding: 8px;
+  font-family: 'Noto Sans', sans-serif, Georgia;
+  font-weight: 700;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--primary);
+}
+
+/* Stijlen voor het vraagaanbod initatieven */
+/* 
+.vraagaanbod {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+} */
+
+.vraagaanbod {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr)); 
+  gap: 20px; /* Ruimte tussen de artikelen */
+}
+
+.vraagaanbod article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px; 
+  width: 100%; 
+  margin-right: auto;
+}
+
+.vraagaanbod h2 {
+  color: #333;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.vraagaanbod p {
+  margin: 8px 0;
+  font-size: 0.9em;
+}
+
+.vraagaanbod .over-vraagaanbod-tekst {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.vraagaanbod img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Stijlen voor het contactgedeelte */
+.contact {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stijlen voor het vraagaanbod artikel inhoud */
+.vraagaanbod .over-vraagaanbod-tekst {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.vraagaanbod img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin-top: 10px;
+  max-height: 150px; 
+  object-fit: cover; 
+}

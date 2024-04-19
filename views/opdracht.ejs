@@ -1,0 +1,108 @@
+<%- include('./partials/head.ejs') -%> 
+
+<main class="main__aanmelden">
+
+    <!-- Inleiding Sectie -->
+    <section class="main__aanmelden--intro">
+      <!-- Titel -->
+      <h1>Plaats een initiatief</h1>
+      <!-- Inleidende tekst -->
+      <!-- <p>Plaats een initiatief</p> -->
+    </section>
+  
+    <!-- Formulier voor het indienen van gegevens -->
+    <form action="/opdracht" method="POST">
+  
+      <!-- Veld voor het invoeren van contactgegevens -->
+     <fieldset class="flex">
+        <!-- Contactgegevens -->
+        <legend>Contact gegevens</legend>
+        <!-- Voornaam -->
+        <p class="flex column">
+          <!-- Label voor het invoerveld voor de voornaam -->  
+          <label for="name">Voornaam<span>*</span></label>
+          <!-- Invoerveld voor het invoeren van de voornaam -->
+          <input type="text" id="name" name="name" required>
+        </p>
+        <!-- Achternaam -->
+        <p class="flex column">
+          <label for="surname">Achternaam<span>*</span></label>
+          <input type="text" id="surname" name="surname" required>
+        </p>
+        <!-- E-mailadres -->
+        <p>
+          <label for="email">E-mail<span>*</span></label>
+          <input type="text" id="email" name="email" required>
+        </p>
+      </fieldset>
+    
+      <!-- Veld voor het invoeren van initiatiefgegevens -->
+      <fieldset>
+        <!-- Initiatiefgegevens -->
+        <legend>Initiatief gegevens</legend>
+        <!-- Radioknoppen voor het selecteren van het type initiatief (vraag of aanbod) -->
+        <div class="radio-buttons">
+          <!-- Knop voor selecteren vraag -->
+          <p>
+            <input type="radio" id="vraag" name="contact" value="vraag" checked/>
+            <label for="type">Vraag</label>
+          </p>
+          <!-- Knop voor selecteren aanbod -->
+          <p>
+            <input type="radio" id="aanbod" name="contact" value="aanbod"/>
+            <label for="type">Aanbod</label>
+          </p>
+        </div>
+      
+        <!-- Invoerveld voor de titel van het initiatief -->
+        <label for="title">Titel<span>*</span></label>
+        <input type="text" id="title" name="title" required>
+        
+        <!-- Invoerveld voor een korte beschrijving van het initiatief -->
+        <label for="short_description">Initiatief in 3 zinnen<span>*</span></label>
+        <input type="text" id="short_description" name="short_description" required>
+        
+        <!-- Invoerveld voor een uitgebreide beschrijving van het initiatief -->
+        <label for="long_description">Beschrijving<span>*</span></label>
+        <input type="text" id="long_description" name="long_description" required>
+      
+        <!-- Invoerveld voor de locatie van het initiatief -->
+        <label for="location">Locatie</label>
+        <input type="text" id="location" name="location">
+      
+        <!-- Buurt van het initiatief -->
+        <label for="neighbourhood">Buurt<span>*</span></label>
+        <select name="neighbourhood" id="neighbourhood" name="neighbourhood" required>
+          <option value="1">Buurt 1</option>
+          <option value="2">Buurt 2</option>
+          <option value="3">Buurt 3</option>
+          <option value="4">Buurt 4</option>
+        </select>
+      
+        <!-- Start- en einddatum van het initiatief -->
+        <label for="start_date">Start datum</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date">Eind datum</label>
+        <input type="date" id="end_date" name="end_date" required>
+      
+        <!-- Start- en eindtijd van het initiatief -->
+        <label for="time">Start tijd</label>
+        <input type="time" id="time" name="time" required>
+        <label for="end_time">Eind tijd</label>
+        <input type="time" id="end_time" name="end_time" required>
+      
+        <!-- Uploaden van een foto -->
+        <p class="flex column upload">
+          <label for="image">Foto uploaden</label>
+          <input type="file" id="image" name="image" accept="image/png, image/jpg" required>
+        </p>
+    
+        <!-- Knop om het formulier in te dienen -->
+        <input type="submit">
+      </fieldset>
+    
+    </form>
+    
+  </main>
+
+  <%- include('./partials/foot.ejs') -%>
