@@ -1,4 +1,5 @@
-/* Variabelen voor kleuren en schaduw */
+/* Generieke stijlen */
+
 :root {
   --primary: rgb(167, 208, 183);
   --dark: #333;
@@ -6,12 +7,48 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-/* Stijlen voor de header */
-/* div.header {
-  background-color: var(--primary);
-} */
+body {
+  font-family: 'Noto Sans', sans-serif, Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
 
-/* Stijlen voor de menubalk */
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+/* Header en Footer */
+.header {
+  background: var(--light);
+}
+
+.logo {
+  line-height: 16px;
+  font-size: 1.2em;
+}
+
+.logo h1 {
+  font-weight: 700;
+  text-shadow: 3px 3px 20px #000;
+}
+
+.logo h1:nth-child(2) {
+  color: var(--primary);
+}
+
+.footer {
+  background: var(--light);
+  height: 100%;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Menubalk */
 .menubar {
   position: relative;
   display: block;
@@ -29,7 +66,6 @@
   border-radius: 3px;
 }
 
-/* Stijlen voor de ul binnen de menubalk */
 .menubar ul {
   height: 0;
   display: inline-block;
@@ -39,37 +75,24 @@
   width: 90%;
 }
 
-/* Stijlen voor links binnen de menubalk */
 .menubar a {
   color: #6d6d6d;
   display: block;
   padding: 5px 10px;
 }
 
-/* Stijlen voor links binnen de menubalk bij hover */
 .menubar li:hover a {
   color: #ecf0f1;
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* Stijlen voor de actieve link binnen de menubalk */
 .menubar .active {
   color: #ecf0f1;
 }
 
-/* Stijlen voor de footer */
-.footer {
-  background: var(--light);
-  height: 100%;
-  padding: 60px 0;
-  text-align: center;
-}
-
-/* Media query voor schermen groter dan 768px */
+/* Media query */
 @media screen and (min-width: 768px) {
-  /* Stijlen voor de header bij schermen groter dan 768px */
   .header {
-    /* border-bottom: 15px solid, var(--primary); */
     position: relative;
     height: 100%;
     text-align: left;
@@ -77,7 +100,6 @@
     background: var(--light);
   }
 
-  /* Stijlen voor het logo binnen de header */
   .logo {
     left: 0;
     display: inline-block;
@@ -86,12 +108,10 @@
     padding-left: 20px;
   }
 
-  /* Stijlen voor links binnen de menubalk */
   .logo a {
     display: inline-block;
   }
 
-  /* Stijlen voor de menubalk */
   .menubar {
     cursor: default;
     position: absolute;
@@ -104,7 +124,6 @@
     border-radius: 3px;
   }
 
-  /* Stijlen voor de ul binnen de menubalk */
   .menubar ul {
     height: auto;
     max-height: 50px;
@@ -114,7 +133,6 @@
     padding: 20px;
   }
 
-  /* Stijlen voor links binnen de menubalk */
   .menubar a {
     padding: 5px 0;
     display: inline-block;
@@ -126,7 +144,6 @@
     font-size: 14px;
   }
 
-  /* Stijlen voor li binnen de menubalk */
   .menubar li {
     display: inline-block;
     list-style-type: none;
@@ -135,26 +152,18 @@
   }
 }
 
-/* Stijlen voor de body */
-body {
-  font-family: 'Noto Sans', sans-serif, Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-}
+/* Specifieke stijlen */
 
-/* Tekststijlen voor paragrafen */
+/* Tekststijlen */
 p {
   line-height: 25px;
   font-weight: 400;
 }
 
-/* Stijlen voor h1 */
 h1 {
   color: var(--light);
 }
 
-/* Stijlen voor h2, h3, h4, h5, h6 */
 h2, h3, h4, h5, h6 {
   letter-spacing: 0.8px;
   font-family: 'PT Sans', sans-serif, Helvetica;
@@ -162,36 +171,7 @@ h2, h3, h4, h5, h6 {
   color: var(--dark);
 }
 
-/* Stijlen voor links */
-a {
-  text-decoration: none;
-}
-
-/* Stijlen voor de wrapper */
-.wrapper {
-  margin: 0 auto;
-}
-
-/* Stijlen voor het logo */
-.logo {
-  line-height: 16px;
-  font-size: 1.2em;
-  padding-bottom: 30px;
-}
-
-/* Stijlen voor h1 binnen het logo */
-.logo h1 {
-  font-weight: 700;
-  text-shadow: 3px 3px 20px #000;
-  color: var(--dark);
-}
-
-/* Stijlen voor tweede h1 binnen het logo */
-.logo h1:nth-child(2) {
-  color: var(--primary);
-}
-
-/* Stijlen voor afbeeldingen binnen de banner */
+/* Afbeeldingen en banners */
 .banner img {
   display: block;
   max-width: 100%;
@@ -199,7 +179,7 @@ a {
   opacity: 0.7;
 }
 
-/* Stijlen voor de sectie over Wat doen wij? */
+/* Sectie 'Wat doen wij?' */
 .about-info {
   width: 85%;
   position: relative;
@@ -214,32 +194,14 @@ a {
   color: #6d6d6d;
 }
 
-/* Stijlen voor paragrafen binnen de about-info sectie */
 .about-info p {
   font-size: 1em;
 }
 
-/* Stijlen voor de informatie binnen de about-info sectie */
-/* .info {
-  box-sizing: border-box;
-  position: relative;
-  padding: 60px 20px 0px 0;
-  vertical-align: top;
-  text-align: center;
-  color: #6d6d6d;
-} */
-
-/* Stijlen voor het laatste div-element binnen de about-info sectie */
 .about-info div:last-child {
   padding: 60px 20px 30px 0;
 }
 
-/* Stijlen voor h1 binnen de informatie sectie */
-.info h1 {
-  padding-bottom: 30px;
-}
-
-/* Stijlen voor afbeeldingen binnen de about-info sectie */
 .about-info img {
   position: relative;
   height: 67px;
@@ -255,14 +217,13 @@ a {
   text-align: center;
 }
 
-/* Stijlen voor h2 binnen de call-to-action sectie */
 .cta h2 {
   padding-top: 50px;
   padding-bottom: 50px;
   color: #2e2e2e;
 }
 
-/* Stijlen voor de knop */
+/* Knopstijlen */
 .btn {
   text-transform: uppercase;
   background: rgba(236, 240, 241, 0.6);
@@ -274,13 +235,11 @@ a {
   color: #2e2e2e;
 }
 
-/* Stijlen voor de knop bij hover */
 .btn:hover {
   background: rgba(236, 240, 241, 0.8);
 }
 
-/* Form */
-
+/* Formulierstijlen */
 .input-group {
   margin-bottom: 15px;
 }
@@ -330,18 +289,11 @@ input[type="submit"]:hover {
   background-color: var(--primary);
 }
 
-/* Stijlen voor het vraagaanbod initatieven */
-/* 
-.vraagaanbod {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-} */
-
+/* Vraagaanbod sectie */
 .vraagaanbod {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr)); 
-  gap: 20px; /* Ruimte tussen de artikelen */
+  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+  gap: 20px;
 }
 
 .vraagaanbod article {
@@ -350,8 +302,8 @@ input[type="submit"]:hover {
   margin-bottom: 20px;
   padding: 10px 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 600px; 
-  width: 100%; 
+  max-width: 600px;
+  width: 100%;
   margin-right: auto;
 }
 
@@ -379,7 +331,7 @@ input[type="submit"]:hover {
   margin-top: 10px;
 }
 
-/* Stijlen voor het contactgedeelte */
+/* Contact sectie */
 .contact {
   display: flex;
   align-items: center;
@@ -389,7 +341,7 @@ input[type="submit"]:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Stijlen voor het vraagaanbod artikel inhoud */
+/* Footer inhoud */
 .vraagaanbod .over-vraagaanbod-tekst {
   font-style: italic;
   color: #555;
@@ -403,6 +355,6 @@ input[type="submit"]:hover {
   border-radius: 4px;
   display: block;
   margin-top: 10px;
-  max-height: 150px; 
-  object-fit: cover; 
+  max-height: 150px;
+  object-fit: cover;
 }
