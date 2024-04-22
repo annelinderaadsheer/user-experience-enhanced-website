@@ -7,7 +7,7 @@ import express from "express";
 import fetchJson from "./helpers/fetch-json.js";
 
 // Importeer slugify voor leesbare URLs met slug
-// import slugify from "slugify";
+import slugify from "slugify";
 
 // Declare de base URL van de directus API
 const baseUrl = "https://fdnd-agency.directus.app";
@@ -27,39 +27,44 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 // Fetch de data van de API
+const fetchFromApi = (endpoint) => {
+  return fetchJson(baseUrl + endpoint).then((response) => response.data);
+};
 
 // Data ophalen van de API
-
+// fetchData().then((allAdvertisementsData) => {
 
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({ extended: true }));
 
-// Als iemand mijn route pagina bezoekt, dan rendert de homepage
+// GET-routes
+
+// GET-route voor de index homepagina
 app.get("/", function (request, response) {
   response.render("homepage");
 });
 
-// Get-route voor Contact pagina
+// GET-route voor contact pagina
 app.get("/contact", function (request, response) {
   response.render("contact");
 });
 
-// Get-route voor About pagina
+// GET-route voor about pagina
 app.get("/about", function (request, response) {
   response.render("about");
 });
 
-// Get-route voor FAQ pagina
+// GET-route voor FAQ pagina
 app.get("/faq", function (request, response) {
   response.render("faq");
 });
 
-// Get-route voor Opdracht pagina
+// GET-route voor opdracht pagina
 app.get("/opdracht", function (request, response) {
   response.render("opdracht");
 });
 
-// Get-route voor Vraag-aanbod pagina, eigen data inladen 
+// GET-route voor vraag-aanbod pagina, eigen data inladen 
 app.get("/vraag-aanbod", function (request, response) {
   fetchJson("https://fdnd-agency.directus.app/items/dh_services").then(
     (apiData) => {
@@ -70,10 +75,68 @@ app.get("/vraag-aanbod", function (request, response) {
   );
 });
 
-// Stel het poortnummer in waar express op moet gaan luisteren
+// GET-route voor vraag-aanbod/:detail pagina
+
+// GET-route voor succes pagina
+app.get("/succes", function (request, response) {
+  response.render("succes");
+});
+
+// GET-route voor view pagina
+app.get("/view", function (request, response) {
+  response.render("view");
+});
+
+// POST-routes
+
+// POST-route om form gegevens te verwerken voor opdracht
+app.post("/opdracht", function (request, response) {
+  const formData = request.body;
+
+  const newAdvertisement = {
+    name: formData.name,
+    surname: formData.surname,
+    email: formData.email,
+    contact: formData.contact,
+    title: formData.title,
+    short_description: formData.short_description,
+    long_description: formData.long_description,
+    location: formData.location,
+    neighbourhood: formData.neighbourhood,
+    start_date: formData.start_date,
+    end_date: formData.end_date,
+    start_time: formData.start_time,
+    end_time: formData.end_time,
+  };
+
+  // Gegevens naar de API endpoint sturen
+  fetchJson(baseUrl + "/items/dh_services", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newAdvertisement),
+  }).then((responseFromAPI) => {
+    console.log("Response from API:", responseFromAPI);
+
+    // Bijwerken van de gegevens vanuit de API
+    fetchData().then((updatedData) => {
+      allAdvertisementsData = updatedData;
+      response.redirect("/succes");
+    }).catch((error) => {
+      console.error("Error fetching data from API:", error);
+      response.status(500).send("Internal Server Error");
+    });
+  }).catch((error) => {
+    console.error("Error while posting data to API:", error);
+    response.status(500).send("Internal Server Error");
+  });
+});
+
+ // Poortnummer instellen waarop Express moet luisteren
 app.set("port", process.env.PORT || 8000);
 
-// Start express op, haal daarbij het zojuist ingestelde poortnummer op
+// Start express server op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get("port"), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get("port")}`);
