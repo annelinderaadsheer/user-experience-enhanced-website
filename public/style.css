@@ -55,7 +55,7 @@ a {
   margin: 0 auto 50px auto;
   padding: 12px 10px 0px 10px;
   text-align: center;
-  font-family: 'Noto Sans', sans-serif, Georgia;
+  /* font-family: 'Noto Sans', sans-serif, Georgia; */
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85em;
@@ -131,6 +131,7 @@ a {
     display: block;
     opacity: 1;
     padding: 20px;
+    /* background: var(--primary); */
   }
 
   .menubar a {
@@ -172,30 +173,46 @@ h2, h3, h4, h5, h6 {
 }
 
 /* Afbeeldingen en banners */
+/* .banner {
+  position: relative; 
+  overflow: hidden; 
+} */
+
 .banner img {
   display: block;
   max-width: 100%;
   height: auto;
-  opacity: 0.7;
+  opacity: 0.4;
 }
+
+/* .banner .wrapper {
+  position: relative; 
+} */
 
 /* Sectie 'Wat doen wij?' */
 .about-info {
+  position: absolute; 
+  top: 70%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   width: 85%;
-  position: relative;
-  background: var(--light);
   margin: auto;
   text-align: center;
   box-sizing: border-box;
-  position: relative;
   padding: 10px 10px 10px 0;
-  vertical-align: top;
-  text-align: center;
-  color: #6d6d6d;
+  /* vertical-align: top; */
+  /* color: #6d6d6d; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); */
+  max-width: 80%; 
+  text-align: center; 
+  /* z-index: 1;  */
+  /* background: none;  */
 }
 
 .about-info p {
   font-size: 1em;
+  color: var(--dark);
 }
 
 .about-info div:last-child {
@@ -206,7 +223,7 @@ h2, h3, h4, h5, h6 {
   position: relative;
   height: 67px;
   width: 57px;
-  margin: 0px 0 0 -15px;
+  /* margin: 0px 0 0 -15px; */
 }
 
 /* Call to Action / ZELF INITIATIEF AANMELDEN */
@@ -301,13 +318,13 @@ input[type="submit"]:hover {
 
 .vraagaanbod article {
   position: relative;
-  width: 18em;
+  width: 25em;
   height: 30em;
   margin: 2em 1em; 
   border: 2px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; 
+  overflow: auto; 
 }
 
 .vraagaanbod h2 {
@@ -315,13 +332,15 @@ input[type="submit"]:hover {
   margin: 0.4em 0;
   font-size: 1.2em;
   overflow: hidden; 
-  /* white-space: nowrap;  */
+  padding: 0.2em 1em;
+  /* padding: inline; */
 }
 
 .vraagaanbod p {
   margin: 8px 0;
   font-size: 0.9em;
   padding: 0.2em 1em;
+  /* text-transform: capitalize; */
   /* overflow: hidden;  */
 }
 
@@ -333,10 +352,11 @@ input[type="submit"]:hover {
 }
 
 .vraagaanbod img {
-  width: 18em;
+  width: 23em;
   height: 10em;
   object-fit: cover;
-  border-radius: 8px 8px 0 0;
+  border-radius: 2px;
+  padding: 0.2em 1em;
 }
 
 /* Contact sectie */

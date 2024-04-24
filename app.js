@@ -7,7 +7,7 @@ import express from "express";
 import fetchJson from "./helpers/fetch-json.js";
 
 // Importeer slugify voor leesbare URLs met slug
-import slugify from "slugify";
+// import slugify from "slugify";
 
 // Declare de base URL van de directus API
 const baseUrl = "https://fdnd-agency.directus.app";

@@ -21,7 +21,7 @@
         <p>Tijd: <%= initatief.time %></p>
         <% } %>
 
-        <p class="over-vraagaanbod-tekst"> <%= initatief.long_description %> </p>
+        <p class="over-vraagaanbod-tekst"> <%- initatief.long_description %> </p>
         <!-- Afbeelding van het vraagaanbod -->
         <% if (initatief.image) { %>
         <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>"            
@@ -29,6 +29,7 @@
         <% } %>
         </article>
         <%});%>
+        
 </section>
 
 <section class="contact"> <!-- Gedeelte voor contactgegevens -->
