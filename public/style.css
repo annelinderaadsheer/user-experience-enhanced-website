@@ -359,6 +359,17 @@ input[type="submit"]:hover {
   padding: 0.2em 1em;
 }
 
+/* Like button */
+
+button.like-button {
+  right: 0.5em;
+  bottom: 0.5em;
+  cursor: pointer;
+  left: 50%; 
+  transform: translateX(50%); 
+  text-align: center; 
+}
+
 /* Contact sectie */
 .contact {
   display: flex;

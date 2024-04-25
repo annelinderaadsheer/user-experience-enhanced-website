@@ -24,15 +24,20 @@
         <p class="over-vraagaanbod-tekst"> <%- initatief.long_description %> </p>
         <!-- Afbeelding van het vraagaanbod -->
         <% if (initatief.image) { %>
-        <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>"            
+        <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>?format=webp"            
         alt="<%- initatief.short_description %>">
+
+        <!-- Like button -->
+        <button class="like-button">Like</button>
         <% } %>
+
         </article>
         <%});%>
         
 </section>
 
-<section class="contact"> <!-- Gedeelte voor contactgegevens -->
+<!-- <section class="contact"> -->
+    <!-- Gedeelte voor contactgegevens -->
     <img src="images/profilepicture.webp" alt="profielfoto">
     <article>
         <!-- Naam van de contactpersoon -->
