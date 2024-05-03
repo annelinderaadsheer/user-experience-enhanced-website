@@ -41,11 +41,32 @@ a {
   color: var(--primary);
 }
 
+/* Footer */
 .footer {
-  background: var(--light);
+  display: flex;
+  justify-content: space-between;
+  background: var(--primary);
   height: 100%;
-  padding: 60px 0;
   text-align: center;
+}
+
+.footer-links {
+  flex: 1;
+}
+
+.footer-links h2 {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.footer-links a:hover {
+  color: darkblue;
 }
 
 /* Menubalk */
@@ -230,7 +251,7 @@ h2, h3, h4, h5, h6 {
 .cta {
   margin-top: -20px;
   width: 100%;
-  background-color: var(--primary);
+  background-color: var(--light);
   text-align: center;
 }
 
