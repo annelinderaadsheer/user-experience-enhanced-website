@@ -24,11 +24,18 @@
         <p class="over-vraagaanbod-tekst"> <%- initatief.long_description %> </p>
         <!-- Afbeelding van het vraagaanbod -->
         <% if (initatief.image) { %>
-        <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>?format=webp"            
-        alt="<%- initatief.short_description %>">
+            <picture>
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= initatief.image %>?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= initatief.image %>?format=webp" type="image/webp">
+                <img src="https://fdnd-agency.directus.app/assets/<%= initatief.image %>">
+            </picture>
+        <alt="<%- initatief.short_description %>">
 
         <!-- Like button -->
+        <form action="" method="POST">
         <button class="like-button">Like</button>
+        </form>
+
         <% } %>
 
         </article>
@@ -37,3 +44,4 @@
 </section>
 
 <%- include('./partials/foot.ejs') -%>
+
