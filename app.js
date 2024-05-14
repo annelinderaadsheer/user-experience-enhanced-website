@@ -133,7 +133,10 @@ app.post("/opdracht", function (request, response) {
   });
 });
 
- // Poortnummer instellen waarop Express moet luisteren
+// POST-route voor het liken van een initatief
+
+
+// Poortnummer instellen waarop Express moet luisteren
 app.set("port", process.env.PORT || 8000);
 
 // Start express server op, haal daarbij het zojuist ingestelde poortnummer op
