@@ -134,7 +134,36 @@ app.post("/opdracht", function (request, response) {
 });
 
 // POST-route voor het liken van een initatief
+app.post("/like", async function (request, response) {
+  const initiatiefId = request.body.initiatiefId;
+  const likes = request.body.likes
 
+  console.log("Like verzoek voor service met ID:", initiatiefId);
+  
+  if (initiatiefId) {
+      // Update het aantal likes in de Directus API
+      fetchJson(`https://fdnd-agency.directus.app/items/dh_services/${initiatiefId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ likes: Number(likes) + Number(1) })
+      }).then((data) => {
+          console.log(data);
+          console.log("Aantal likes bijgewerkt voor service:", initiatiefId, likes);
+          response.redirect("/vraag-aanbod")
+
+
+      }).catch((error) => {
+          console.error("Error patching likes in Directus API:", error);
+      });
+
+  } else {
+    // Laat het weten als de service niet gevonden is.
+    console.log("Service niet gevonden voor ID:", initiatiefId);
+    response.status(404).send("Service niet gevonden");
+  }
+});
 
 // Poortnummer instellen waarop Express moet luisteren
 app.set("port", process.env.PORT || 8000);

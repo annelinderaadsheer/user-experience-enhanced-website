@@ -15,6 +15,8 @@
             
         <!-- Buurt waar het vraagaanbod plaatsvindt -->
         <p>Buurt: <%= initatief.neighbourhood %></p>
+
+        <p>Aantal likes: <%= initatief.likes %></p>
             
         <!-- Optioneel: tijd van het vraagaanbod -->
         <% if (initatief.time) { %>
@@ -32,12 +34,19 @@
         <alt="<%- initatief.short_description %>">
 
         <!-- Like button -->
-        <form action="" method="POST">
+        <!-- <form action="/like" method="POST">
         <button class="like-button">Like</button>
-        </form>
+        </form> -->
 
+        <!-- Like button -->
+        <form action="/like" method="POST">
+            <input type="hidden" name="likes" value="<%= initatief.likes %>">
+            <button class="like-button" for="<%= initatief.id %>-like" value="<%= initatief.id %>" name="initiatiefId">Like</button>
+            <span><%= vraagaanbod.likes %></span>
+        </form>  
+        
         <% } %>
-
+        
         </article>
         <%});%>
         
