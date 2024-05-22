@@ -34,11 +34,6 @@
         <alt="<%- initatief.short_description %>">
 
         <!-- Like button -->
-        <!-- <form action="/like" method="POST">
-        <button class="like-button">Like</button>
-        </form> -->
-
-        <!-- Like button -->
         <form action="/like" method="POST">
             <input type="hidden" name="likes" value="<%= initatief.likes %>">
             <button class="like-button" for="<%= initatief.id %>-like" value="<%= initatief.id %>" name="initiatiefId">Like</button>
@@ -53,3 +48,4 @@
 </section>
 
 <%- include('./partials/foot.ejs') -%>
+
